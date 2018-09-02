@@ -13,7 +13,7 @@ vec4 red(){
 
 vec4 blue(){
 	// return vec4(vec3(0.0,0.0,abs(sin(u_time))),1.0);
-	return vec4(vec3(0.0,0.0,abs(tan(u_time))),1.0);
+	return vec4(vec3(0.0,0.0,abs(tan(u_time))),abs(sin(u_time)));
 }
 
 void main(){

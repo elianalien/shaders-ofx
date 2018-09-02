@@ -2,12 +2,19 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	myBall.setup();
+	for (int i = 0; i < NBALLS; ++i)
+	{
+		myBall[i].setup();
+	}
+	
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-	myBall.update();
+	for (int i = 0; i < NBALLS; ++i)
+	{
+		myBall[i].update();
+	}
 }
 
 //--------------------------------------------------------------
@@ -19,7 +26,10 @@ void ofApp::draw(){
 	shader.setUniform1f("u_time", ofGetElapsedTimef());
 	shader.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());
 	// ofDrawRectangle(0,0,ofGetWidth(),ofGetHeight());
-	myBall.draw();
+	for (int i = 0; i < NBALLS; ++i)
+	{
+		myBall[i].draw();
+	}
 
 	shader.end();
 

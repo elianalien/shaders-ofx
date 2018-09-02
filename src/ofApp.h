@@ -3,6 +3,10 @@
 #include "ofMain.h"
 #include "Ball.h"
 
+#ifndef NBALLS
+#define NBALLS 20
+#endif
+
 class ofApp : public ofBaseApp{
 
 	public:
@@ -23,5 +27,5 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 
 		ofShader shader;
-		Ball myBall;
+		Ball myBall[NBALLS];
 };
