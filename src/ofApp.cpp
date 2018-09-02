@@ -15,6 +15,11 @@ void ofApp::update(){
 	{
 		myBall[i].update();
 	}
+
+	for (int i = 0; i < otherBall.size(); ++i)
+	{
+		otherBall[i].update();
+	}
 }
 
 //--------------------------------------------------------------
@@ -29,6 +34,11 @@ void ofApp::draw(){
 	for (int i = 0; i < NBALLS; ++i)
 	{
 		myBall[i].draw();
+	}
+
+	for (int i = 0; i < otherBall.size(); ++i)
+	{
+		otherBall[i].draw();
 	}
 
 	shader.end();
@@ -52,7 +62,9 @@ void ofApp::mouseMoved(int x, int y ){
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
-
+	Ball tempBall;
+	tempBall.setup();
+	otherBall.push_back(tempBall);
 }
 
 //--------------------------------------------------------------

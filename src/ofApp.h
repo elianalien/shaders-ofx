@@ -28,4 +28,6 @@ class ofApp : public ofBaseApp{
 
 		ofShader shader;
 		Ball myBall[NBALLS];
+
+		vector <Ball> otherBall;
 };
